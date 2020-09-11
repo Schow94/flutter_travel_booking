@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/destination_preview.dart';
+import '../widgets/option_bar.dart';
+import '../widgets/category_title.dart';
+import '../widgets/exclusive_hotel_preview.dart';
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,73 +25,58 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Ink(
-                  decoration: ShapeDecoration(
-                    color: Colors.teal[100],
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.local_airport,
-                      color: Colors.teal[500],
+            OptionBar(),
+            CategoryTitle('Top Destinations'),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Container(
+                margin: EdgeInsets.only(bottom: 20),
+                child: Row(
+                  children: <Widget>[
+                    DestinationPreview(
+                      city: 'Venice',
+                      country: 'Italy',
+                      imageUrl:
+                          'https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
                     ),
-                  ),
-                ),
-                Ink(
-                  decoration: ShapeDecoration(
-                    color: Colors.grey[300],
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.hotel,
-                      color: Colors.grey[500],
+                    DestinationPreview(
+                      city: 'Paris',
+                      country: 'France',
+                      imageUrl:
+                          'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
                     ),
-                  ),
-                ),
-                Ink(
-                  decoration: ShapeDecoration(
-                    color: Colors.grey[300],
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.directions_walk,
-                      color: Colors.grey[500],
+                    DestinationPreview(
+                      city: 'Amsterdam',
+                      country: 'Netherlands',
+                      imageUrl:
+                          'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
                     ),
-                  ),
+                  ],
                 ),
-                Ink(
-                  decoration: ShapeDecoration(
-                    color: Colors.grey[300],
-                    shape: CircleBorder(),
-                  ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.directions_bike),
-                    color: Colors.grey[500],
-                  ),
-                ),
-              ],
+              ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+            CategoryTitle('Exclusive Hotels'),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    'Top Destinations',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ExclusiveHotelPreview(
+                    name: 'Hotel 0 ',
+                    address: '404 Great St',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
                   ),
-                  Text(
-                    'See All',
-                    style: TextStyle(color: Colors.teal),
+                  ExclusiveHotelPreview(
+                    name: 'Hotel 0 ',
+                    address: '404 Great St',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+                  ),
+                  ExclusiveHotelPreview(
+                    name: 'Hotel 0 ',
+                    address: '404 Great St',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
                   ),
                 ],
               ),
