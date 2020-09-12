@@ -65,24 +65,54 @@ class HomeScreen extends StatelessWidget {
                     address: '404 Great St',
                     imageUrl:
                         'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+                    price: 175,
                   ),
                   ExclusiveHotelPreview(
                     name: 'Hotel 0 ',
                     address: '404 Great St',
                     imageUrl:
                         'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+                    price: 175,
                   ),
                   ExclusiveHotelPreview(
                     name: 'Hotel 0 ',
                     address: '404 Great St',
                     imageUrl:
                         'https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+                    price: 175,
                   ),
                 ],
               ),
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              size: 30,
+            ),
+            title: SizedBox.shrink(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.fastfood,
+              size: 30,
+            ),
+            title: SizedBox.shrink(),
+          ),
+          BottomNavigationBarItem(
+            icon: CircleAvatar(
+              radius: 15,
+              backgroundImage: NetworkImage(
+                'https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1145&q=80',
+              ),
+            ),
+            title: SizedBox.shrink(),
+          ),
+        ],
       ),
     );
   }
